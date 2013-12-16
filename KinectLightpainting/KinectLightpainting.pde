@@ -5,13 +5,16 @@ import java.util.Iterator;
 import SimpleOpenNI.*;
 color a,b;
 boolean useFirst = true;
-
+PGraphics pg;
+float vel;
+float vel1;
 void setup()
 {
 //  frameRate(200);
   size(1000,1000); // The Canvas
   background(0);
   resetColors();
+  //pg = createGraphics(400, 200);
 
   context = new SimpleOpenNI(this);
   if(context.isInit() == false)
@@ -86,6 +89,22 @@ void draw()
   context.update();
 
   image(context.depthImage(),0,0);
+   
+  
+//  
+//  fill(0, 12);
+//  rect(0, 0, width, height);
+   noStroke();
+  vel=(mouseX-pmouseX);
+  vel1=70/vel;
+  ellipse(mouseX, mouseY, vel1, vel1);
+//  
+  //pg.beginDraw();
+  //pg.background(51);
+  //pg.noFill();
+  //pg.stroke(400);
+ // pg.ellipse(mouseX-120, mouseY-60, 60, 60);
+  //pg.endDraw();  
     
   // draw the tracked hands
   if(handPathList.size() > 0)  
