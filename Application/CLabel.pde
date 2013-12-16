@@ -1,0 +1,59 @@
+/* --------------------------------------------------------------------------
+ * This is Label class desc
+ * author:  Gigi Ho
+ * date:  15/12/2012
+ * ----------------------------------------------------------------------------
+ */
+ 
+public class CLabel extends CNode implements IDrawable{
+  /**
+   * @note below member vars are all dirty now
+   * @todo turn them to protected scope and use getter/setter
+   */
+  public PFont pfFont = null;
+  public String strText = "";
+  
+  public String strFontName = "Arial";
+  public float fFontSize = 12;
+  public boolean bFontSmooth = true;
+  
+  public int iAlignX = CENTER;   //LEFT, CENTER, or RIGHT
+  public int iAlignY = BOTTOM; //TOP, BOTTOM, CENTER, or BASELINE
+  
+  CLabel(){
+    Init(this.strText);
+  }
+  
+  CLabel(String strLabelText){
+    Init(strLabelText);   
+  }
+  
+//  public static CLabel Create(String strLabelText){
+//    return new CLabel(strLabelText);  
+//  }
+  
+  boolean Init(String strText){
+    //Init member vars
+    this.strText = strText;
+    
+    return true;
+  }
+    
+    
+  void Update(){    
+    this.pfFont = createFont(this.strFontName, this.fFontSize, this.bFontSmooth);
+    textFont(pfFont);  
+    textAlign(iAlignX, iAlignY);
+  }
+  
+  void Draw(){
+    this.Update();
+
+    text(this.strText, this.GetPositionX(), this.GetPositionY());
+
+  }
+  
+
+  
+  
+}
