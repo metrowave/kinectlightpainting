@@ -11,7 +11,7 @@ class CLayer extends CNode implements IDrawable{
   
   CLayer(){
     super();
-    
+    //Init member vars
   }
   
   boolean Init(){
@@ -20,9 +20,10 @@ class CLayer extends CNode implements IDrawable{
     }
     
     CLogger.Debug("[CLayer.Init]");
-    //Init vars
-    //    this.SetPosition(0,0); //default to be in the middle of the sketch
+
+    //Init member vars (new object)
     this.arrChildren = new ArrayList();
+    //    this.SetPosition(0,0); //default to be in the middle of the sketch
     
     return true;
   }

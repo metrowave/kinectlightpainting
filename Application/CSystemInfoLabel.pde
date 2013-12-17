@@ -7,18 +7,20 @@
  
 public class CSystemInfoLabel extends CLabel{
   CSystemInfoLabel(){
-    Init();
+    super();
+    
+    this.iAlignX = RIGHT;
+    this.iAlignY = BOTTOM;
   }
 
   
   boolean Init(){
-    if(!super.Init("")){
+    if(!super.Init()){
        return false; 
     }
     
     this.SetPosition(width,height);
-    this.iAlignX = RIGHT;
-    this.iAlignY = BOTTOM;
+
     
     return true;
   }

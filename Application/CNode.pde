@@ -17,10 +17,7 @@ class CNode {
   
   /**
    * @desc this will be called in Draw(), used for var update before drawing objects
-   *
-   *
-   *
-   *
+ 
    */ 
   void Update(){
     

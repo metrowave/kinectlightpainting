@@ -10,9 +10,6 @@ class CScene extends CLayer{
   
   CScene(){
     super();
-    
-    CLogger.Debug("[CScene.()]");
-//    this.Init();
   }
   
   boolean Init(){
@@ -20,10 +17,11 @@ class CScene extends CLayer{
       return false;
     }
     
-    CLogger.Debug("[CScene.Init]");
+    CLogger.Debug("[CScene.Init()]");
     
     if(this.bSystemInfoOn){
       CSystemInfoLabel sysLabel = new CSystemInfoLabel();
+      sysLabel.Init();
       this.AddChild(sysLabel);  
     }
     

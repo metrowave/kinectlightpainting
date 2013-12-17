@@ -21,20 +21,21 @@ public class CLabel extends CNode implements IDrawable{
   public int iAlignY = BOTTOM; //TOP, BOTTOM, CENTER, or BASELINE
   
   CLabel(){
-    Init(this.strText);
   }
   
   CLabel(String strLabelText){
-    Init(strLabelText);   
+    //Init member vars
+    this.strText = strLabelText;
   }
   
 //  public static CLabel Create(String strLabelText){
 //    return new CLabel(strLabelText);  
 //  }
   
-  boolean Init(String strText){
-    //Init member vars
-    this.strText = strText;
+  boolean Init(){
+    if(!super.Init()){
+      return false;
+    }
     
     return true;
   }
