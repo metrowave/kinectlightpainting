@@ -13,11 +13,10 @@ import java.util.*;
  
 CPageController pageController = null;
 void setup(){
-  size(640, 480);
-   
+  size(640, 480); //size of the canvas
   background(0,0,0);
    
-//  noLoop();
+ // noLoop();
   pageController = new CPageController();
   pageController.GotoPageIdle();
    
