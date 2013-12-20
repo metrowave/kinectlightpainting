@@ -4,6 +4,7 @@ public class CPageController{
   void GotoPageIdle(){
     curPage = new CPageIdle();
     curPage.Init();
+    CLogger.Info("Page displayed");
   }
   
   void GotoPageCapture(){
