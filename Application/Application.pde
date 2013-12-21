@@ -11,22 +11,28 @@
 import java.util.*;
  
  
-CPageController pageController = null;
+CPageController g_pageController = null; //this is a singleton
+IInputController g_inputController = null; //@TODO: remove from global and passing to classes if necessary
 void setup(){
   size(640, 480); //size of the canvas
   background(0,0,0);
    
  // noLoop();
-  pageController = new CPageController();
-  pageController.GotoPageIdle();
+  g_pageController = new CPageController();
+  g_pageController.GotoPageIdle();
    
    CLogger.Debug("test logger");
+   
+   //@TODO: define InputInterface here
+   g_inputController = new CInputMouse();
+   g_inputController.Init();
+   
 }
  
 void draw() {
-  pageController.curPage.Draw();
+  g_pageController.curPage.Draw();
 }
 
 void mousePressed(){
-  pageController.GotoPageCapture();
+  g_pageController.GotoPageCapture();
 }
