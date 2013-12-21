@@ -16,6 +16,7 @@ public class CLabel extends CNode implements IDrawable{
   public String strFontName = "Arial";
   public float fFontSize = 12;
   public boolean bFontSmooth = true;
+  public color cFontColor = color(255, 255, 255);
   
   public int iAlignX = CENTER;   //LEFT, CENTER, or RIGHT
   public int iAlignY = BOTTOM; //TOP, BOTTOM, CENTER, or BASELINE
@@ -45,6 +46,7 @@ public class CLabel extends CNode implements IDrawable{
     this.pfFont = createFont(this.strFontName, this.fFontSize, this.bFontSmooth);
     textFont(pfFont);  
     textAlign(iAlignX, iAlignY);
+    fill(this.cFontColor);
   }
   
   void Draw(){

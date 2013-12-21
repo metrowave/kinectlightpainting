@@ -23,6 +23,13 @@ class CPageIdle extends CScene{
     testLabel.SetPosition(width/2,20);
     this.AddChild(testLabel);
     
+    //Create canvas
+    CCanvas canvas = new CCanvas();
+    canvas.Init();
+    this.AddChild(canvas);
+    
+    
+    
     return true;
   } 
 }
